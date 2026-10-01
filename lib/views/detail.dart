@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:kuis/models/data.dart';
 
+import '../controllers/menucontroller.dart';
+
 class DetailPage extends StatelessWidget {
   final Product catalog;
 
   const DetailPage({super.key, required this.catalog});
+
+  get controller => null;
 
   @override
   Widget build(BuildContext context) {
@@ -79,6 +83,10 @@ class DetailPage extends StatelessWidget {
                 fontWeight: FontWeight.w700,
                 color: Color(0xFF1F1F1F),
               ),
+            ),
+            IconButton(
+              onPressed: () => controller.toggleFavorite(catalog.id),
+              icon: Icon(Icons.favorite, color: Colors.red),
             ),
             Text("${catalog.likeCount} likes" + " Stok: ${catalog.stock}"),
             const SizedBox(height: 24),

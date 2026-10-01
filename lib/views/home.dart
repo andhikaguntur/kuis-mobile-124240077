@@ -97,6 +97,11 @@ class _HomePageState extends State<HomePage> {
                           Text(catalog.price),
                           Text(catalog.type),
                           Text("Stock: ${catalog.stock}"),
+                          IconButton(
+                            onPressed: () =>
+                                controller.toggleFavorite(catalog.id),
+                            icon: Icon(Icons.favorite, color: Colors.red),
+                          ),
                           Text("Suka: ${catalog.likeCount}"),
                         ],
                       ),
@@ -108,16 +113,6 @@ class _HomePageState extends State<HomePage> {
                       trailing: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          IconButton(
-                            onPressed: () =>
-                                controller.toggleFavorite(catalog.id),
-                            icon: Icon(
-                              isFavorite
-                                  ? Icons.favorite
-                                  : Icons.favorite_border,
-                              color: isFavorite ? Colors.red : Colors.grey,
-                            ),
-                          ),
                           const Icon(Icons.arrow_forward_ios, size: 16),
                         ],
                       ),
