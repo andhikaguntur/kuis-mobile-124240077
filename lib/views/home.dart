@@ -91,7 +91,15 @@ class _HomePageState extends State<HomePage> {
                         );
                       },
                       title: Text(catalog.productName),
-                      subtitle: Text(catalog.price),
+                      subtitle: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(catalog.price),
+                          Text(catalog.type),
+                          Text("Stock: ${catalog.stock}"),
+                          Text("Suka: ${catalog.likeCount}"),
+                        ],
+                      ),
                       leading: Image.network(
                         catalog.imageUrl,
                         width: 90,

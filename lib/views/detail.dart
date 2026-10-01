@@ -48,7 +48,7 @@ class DetailPage extends StatelessWidget {
             Text(
               catalog.productName,
               style: const TextStyle(
-                fontSize: 28,
+                fontSize: 17,
                 fontWeight: FontWeight.w700,
                 color: Color(0xFF1F1F1F),
               ),
@@ -66,7 +66,7 @@ class DetailPage extends StatelessWidget {
             Text(
               catalog.price,
               style: const TextStyle(
-                fontSize: 24,
+                fontSize: 15,
                 fontWeight: FontWeight.w700,
                 color: Color(0xFF2DAE5E),
               ),
@@ -75,16 +75,17 @@ class DetailPage extends StatelessWidget {
             const Text(
               "Jumlah Produk",
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 15,
                 fontWeight: FontWeight.w700,
                 color: Color(0xFF1F1F1F),
               ),
             ),
+            Text("${catalog.likeCount} likes" + " Stok: ${catalog.stock}"),
             const SizedBox(height: 24),
             const Text(
               "Ukuran",
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 15,
                 fontWeight: FontWeight.w700,
                 color: Color(0xFF1F1F1F),
               ),
@@ -93,7 +94,7 @@ class DetailPage extends StatelessWidget {
             const Text(
               "Deskripsi",
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 15,
                 fontWeight: FontWeight.w700,
                 color: Color(0xFF1F1F1F),
               ),
